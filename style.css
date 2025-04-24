@@ -1,4 +1,8 @@
-.card-title {
+h1 {
+  font-size: 4rem;
+}
+.card-title,
+h1 {
   font-family: Edu Tas Beginner;
   font-weight: 700;
 }
@@ -12,6 +16,9 @@ time {
 }
 .main-background {
   background-image: url(./img/cork.png);
+}
+.header-background {
+  background-image: url(./img/wall.png);
 }
 @media screen and (min-width: 992px) {
   .container {
