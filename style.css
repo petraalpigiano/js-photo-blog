@@ -20,6 +20,11 @@ time {
 .header-background {
   background-image: url(./img/wall.png);
 }
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
 @media screen and (min-width: 992px) {
   .container {
     max-width: 850px;
