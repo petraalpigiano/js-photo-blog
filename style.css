@@ -1,1 +1,15 @@
+.card-title {
+  font-family: Edu Tas Beginner;
+  font-weight: 700;
+}
+time {
+  font-family: Sometype Mono;
+  color: #959fa7;
+}
 
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 850px;
+    width: 100%;
+  }
+}
