@@ -11,38 +11,63 @@
 // 6° ogni email in pratica viene stampata come elemento di una lista perche riassengno la variabile ed aggiungo un pezzo di lista
 // 7° quindi mi serve un for o uso quello di sopra mettendolo dentro una funzione
 const rowEl = document.getElementById("row");
-
 let card = ``;
 
-for (let i = 0; i < 6; i++) {
-  axios
-    .get(`https://lanciweb.github.io/demo/api/pictures/`)
-    .then((response) => {
-      const currentIndex = response.data[i];
-      const currentTitle = currentIndex.title.toUpperCase();
-      const currentImage = currentIndex.url;
-      const currentDate = currentIndex.date;
-      for (let i = 0; i < 1; i++) {
-        card += `
-  <div class="col position-relative">
-    <img
-      src="./img/pin.svg"
-      class="position-absolute top-0 start-50 translate-middle z-1"
-      alt="pin"
-    />
-    <div id="full-card" class="card h-100 rounded-0">
-      <img
-        src="${currentImage}"
-        class="card-img-top px-3 pt-3"
-        alt="${currentTitle}"
-      />
-      <div class="card-body">
-        <time datetime="2024-07-01">${currentDate}</time>
-        <h5 class="card-title">${currentTitle}</h5>
-      </div>
-    </div>
-  </div> `;
-      }
-      rowEl.innerHTML = card;
-    });
-}
+axios.get(`https://lanciweb.github.io/demo/api/pictures/`).then((response) => {
+  const JSONArray = response.data;
+  for (const element of JSONArray) {
+    card += `
+      <div class="col position-relative">
+        <img
+          src="./img/pin.svg"
+          class="position-absolute top-0 start-50 translate-middle z-1"
+          alt="pin"
+        />
+        <div id="full-card" class="card h-100 rounded-0">
+          <img
+            src="${element.url}"
+            class="card-img-top px-3 pt-3"
+            alt="${element.title}"
+          />
+          <div class="card-body">
+            <time datetime="2024-07-01">${element.date}</time>
+            <h5 class="card-title">${element.title.toUpperCase()}</h5>
+          </div>
+        </div>
+      </div> `;
+    rowEl.innerHTML = card;
+  }
+});
+
+// for (let i = 0; i < 6; i++) {
+//   axios
+//     .get(`https://lanciweb.github.io/demo/api/pictures/`)
+//     .then((response) => {
+//       const currentIndex = response.data[i];
+//       const currentTitle = currentIndex.title.toUpperCase();
+//       const currentImage = currentIndex.url;
+//       const currentDate = currentIndex.date;
+//       for (let i = 0; i < 1; i++) {
+//         card += `
+//   <div class="col position-relative">
+//     <img
+//       src="./img/pin.svg"
+//       class="position-absolute top-0 start-50 translate-middle z-1"
+//       alt="pin"
+//     />
+//     <div id="full-card" class="card h-100 rounded-0">
+//       <img
+//         src="${currentImage}"
+//         class="card-img-top px-3 pt-3"
+//         alt="${currentTitle}"
+//       />
+//       <div class="card-body">
+//         <time datetime="2024-07-01">${currentDate}</time>
+//         <h5 class="card-title">${currentTitle}</h5>
+//       </div>
+//     </div>
+//   </div> `;
+//       }
+//       rowEl.innerHTML = card;
+//     });
+// }
