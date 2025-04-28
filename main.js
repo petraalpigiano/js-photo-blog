@@ -12,6 +12,7 @@
 // 7° quindi mi serve un for o uso quello di sopra mettendolo dentro una funzione
 const rowEl = document.getElementById("row");
 const iconEl = document.getElementById("close-icon");
+const overlayEl = document.getElementById("overlay");
 let card = ``;
 
 axios.get(`https://lanciweb.github.io/demo/api/pictures/`).then((response) => {
@@ -39,6 +40,13 @@ axios.get(`https://lanciweb.github.io/demo/api/pictures/`).then((response) => {
     rowEl.innerHTML = card;
   }
 });
+
+// overlayEl.classList.remove("d-none");
+// OVERLAY SCOMPARE QUANDO CLICCO L'X
+iconEl.addEventListener("click", function () {
+  overlayEl.classList.add("d-none");
+});
+
 // Milestone 2
 // Facciamo in modo di creare un overlay che copra l’intera pagina e all’interno, centrata, disponiamo un’immagine qualunque ed un button di chiusura.
 // Facciamo sparire l’overlay con l’aiuto di una classe CSS che imposti il display: none .
