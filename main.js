@@ -11,6 +11,7 @@
 // 6° ogni email in pratica viene stampata come elemento di una lista perche riassengno la variabile ed aggiungo un pezzo di lista
 // 7° quindi mi serve un for o uso quello di sopra mettendolo dentro una funzione
 const rowEl = document.getElementById("row");
+const iconEl = document.getElementById("close-icon");
 let card = ``;
 
 axios.get(`https://lanciweb.github.io/demo/api/pictures/`).then((response) => {
