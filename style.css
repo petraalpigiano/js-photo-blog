@@ -20,6 +20,11 @@ time {
 .header-background {
   background-image: url(./img/wall.png);
 }
+#overlay {
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.239);
+  backdrop-filter: blur(3px);
+}
 @media screen and (max-width: 576px) {
   h1 {
     font-size: 3rem;
