@@ -7,6 +7,8 @@ const rowEl = document.getElementById("row");
 const iconEl = document.getElementById("close-icon");
 const overlayEl = document.getElementById("overlay");
 const openImgEl = document.getElementById("open-image");
+const cardDateEl = document.getElementById("date");
+const cardTitleEl = document.getElementById("title");
 
 let card = ``;
 
@@ -58,11 +60,17 @@ axios.get(`https://lanciweb.github.io/demo/api/pictures/`).then((response) => {
  */
 function displayCard(currentNode) {
   const currentImg = currentNode.querySelector("img");
+  const currentTime = currentNode.querySelector("time");
+  const currentH5 = currentNode.querySelector("h5");
   const currentSrc = currentImg.src;
+  const currentDate = currentTime.innerHTML;
+  const currentTitle = currentH5.innerHTML;
   // CON SET ATTRIBUTE
-  return openImgEl.setAttribute("src", currentSrc);
+  // openImgEl.setAttribute("src", currentSrc);
   // CON RIASSEGNAZIONE
-  // return (openImgEl.src = currentSrc);
+  openImgEl.src = currentSrc;
+  cardDateEl.innerText = currentDate;
+  cardTitleEl.innerText = currentTitle;
 }
 /**
  *
