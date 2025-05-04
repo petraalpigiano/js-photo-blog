@@ -79,7 +79,14 @@ function displayCard(currentNode) {
 function disappearBkCard(currentNode) {
   return currentNode.classList.add("d-none");
 }
-
+/**
+ *
+ * @param {node} currentNode card corrente della NodeList
+ * @returns rimuove il display none dalla card corrente
+ */
+function reappearsBkCard(currentNode) {
+  return currentNode.classList.remove("d-none");
+}
 // OTHER SOLUTION
 // for (let i = 0; i < 6; i++) {
 //   axios
