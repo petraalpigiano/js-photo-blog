@@ -3,13 +3,6 @@
 // https://lanciweb.github.io/demo/api/pictures/
 // In ogni caso studiamo bene la risposta e i dati che ci fornisce iniziando a pensare a come poterli sfruttare.
 //Inseriamo un foglio JavaScript ed effettuiamo una chiamata AJAX all’API, sfruttando la risposta per generare dinamicamente in pagina una serie di foto!
-// 1° creo la lista su HTML con bootstrap
-// 2° copio la struttura e la cancello da HTML
-// 3° document.getelemetnbyID ("ul")
-// 4° ul.innerHTML e metto il pezzo di struttura con solo un item <li>
-// 5° nella <li> metto una variabile di appoggio vuota
-// 6° ogni email in pratica viene stampata come elemento di una lista perche riassengno la variabile ed aggiungo un pezzo di lista
-// 7° quindi mi serve un for o uso quello di sopra mettendolo dentro una funzione
 const rowEl = document.getElementById("row");
 const iconEl = document.getElementById("close-icon");
 const overlayEl = document.getElementById("overlay");
@@ -76,17 +69,15 @@ function displayCard(currentNode) {
  * @param {node} currentNode card corrente della NodeList
  * @returns aggiunge il display none alla card corrente
  */
-function disappearBkCard(currentNode) {
-  return currentNode.classList.add("d-none");
-}
+const disappearBkCard = (currentNode) => currentNode.classList.add("d-none");
+
 /**
  *
  * @param {node} currentNode card corrente della NodeList
  * @returns rimuove il display none dalla card corrente
  */
-function reappearsBkCard(currentNode) {
-  return currentNode.classList.remove("d-none");
-}
+const reappearsBkCard = (currentNode) => currentNode.classList.remove("d-none");
+
 // OTHER SOLUTION
 // for (let i = 0; i < 6; i++) {
 //   axios
