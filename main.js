@@ -71,6 +71,14 @@ function displayCard(currentNode) {
   // CON RIASSEGNAZIONE
   // return (openImgEl.src = currentSrc);
 }
+/**
+ *
+ * @param {node} currentNode card corrente della NodeList
+ * @returns aggiunge il display none alla card corrente
+ */
+function disappearBkCard(currentNode) {
+  return currentNode.classList.add("d-none");
+}
 
 // OTHER SOLUTION
 // for (let i = 0; i < 6; i++) {
