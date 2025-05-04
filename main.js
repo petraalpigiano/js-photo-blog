@@ -58,6 +58,19 @@ axios.get(`https://lanciweb.github.io/demo/api/pictures/`).then((response) => {
     });
   }
 });
+/**
+ *
+ * @param {node} currentNode card corrente della NodeList
+ * @returns {string} nuova src alla card aperta equivalente alla src della card corrente
+ */
+function displayCard(currentNode) {
+  const currentImg = currentNode.querySelector("img");
+  const currentSrc = currentImg.src;
+  // CON SET ATTRIBUTE
+  return openImgEl.setAttribute("src", currentSrc);
+  // CON RIASSEGNAZIONE
+  // return (openImgEl.src = currentSrc);
+}
 
 // OTHER SOLUTION
 // for (let i = 0; i < 6; i++) {
